@@ -1,0 +1,7 @@
+io\javabrains\coronavirustracker\models\LocationStats.class
+io\javabrains\coronavirustracker\models\CountryStat.class
+io\javabrains\coronavirustracker\services\CoronaVirusDataService.class
+io\javabrains\coronavirustracker\models\RecoveredStats.class
+io\javabrains\coronavirustracker\CoronavirusTrackerApplication.class
+io\javabrains\coronavirustracker\controllers\HomeController.class
+io\javabrains\coronavirustracker\models\DeathStats.class

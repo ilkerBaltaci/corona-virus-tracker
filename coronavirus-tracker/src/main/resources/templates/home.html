@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body{
+			background-color: ivory;
+		}
+        h1{
+            color: red;
+			font-family: Verdana;
+			font-weight: bold;
+        }
+		h2{
+			text-align: center;
+		}
+        
+		.worldwide{
+			margin-top: 18px;
+			position: relative;
+			width: 50%;
+			float: left;
+			
+		}
+		.country{
+			margin-top: 18px;
+			position: relative;
+			width: 50%;
+			float: left;
+			
+		}
+		.total,
+        .daily{
+            border: 2px solid;
+            margin: 2%;
+            float:left;
+			position: relative;
+            width: 44%;
+			height: 20vw;
+            padding: 2px;
+			background-color: indigo;
+        }
+		table{
+		
+			position: relative;
+			width: 100%;
+			height: 100%;
+			
+		}
+		.total th,
+		.total td,
+		.daily th,
+		.daily td{
+			color: #FFF0F5;
+			font-size: 1.3vw;
+			font-family: Verdana;
+		}
+		.total th,
+		.daily th{
+			width: 40%;
+		}
+		.total td,
+		.daily td{
+			width: 60%;
+		}
+		
+		td{
+			font-size: 18px;
+			font-family: Verdana;
+			text-align: right;
+			padding: 3px;
+		}
+		.stateAll{
+			position: relative;
+			width: 10%;
+			text-align: right;
+		}
+		.countryAll{
+			position: relative;
+			width: 20%;
+			text-align: right;
+		}
+		.reportedAll{
+			position: relative;
+			width: 20%;
+			text-align: right;
+		}
+		.dailyAll{
+			position: relative;
+			width: 20%;
+			text-align: right;
+		}
+		
+    </style>
+
+</head>
+
+<body>
+<div class="container">  
+<h1 style="text-align:center;">Coronavirus Tracker Application</h1>  
+<div class="jumbos" style="background-color: #DDD;">
+	
+	<div class="worldwide">
+		<h2><b>Worldwide<b></h2>
+        <div class="total">
+            <table class="table">
+                <tr>
+                    <th>Total Cases</th>
+                    <td th:text="${totalReportedCases}">192573994</td>
+                </tr>
+                <tr>
+                    <th>Total Recoveries</th>
+                    <td th:text="${totalReportedRecovered}">126665478</td>
+                </tr>
+                <tr>
+                    <th>Total Deaths</th>
+                    <td th:text="${totalReportedDeaths}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="daily">
+            <table class= "table">
+                <tr>
+                    <th>Daily Cases</th>
+                    <td th:text="${totalNewCases}"></td>
+                </tr>
+                <tr>
+                    <th>Daily Recoveries</th>
+                    <td th:text="${totalNewRecovered}"></td>
+                </tr>
+                <tr>
+                    <th>Daily Deaths</th>
+                    <td th:text="${totalNewDeaths}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="country">
+		<h2><b>TURKEY<b></h2>
+        <div class="total">
+			<table class="table">
+                <tr>
+                    <th>Total Cases</th>
+                    <td th:text="${turkeyTotalCases}"></td>
+                </tr>
+                <tr>
+                    <th>Total Recoveries</th>
+                    <td th:text="${turkeyTotalRecoveries}"></td>
+                </tr>
+                <tr>
+                    <th>Total Deaths</th>
+                    <td th:text="${turkeyTotalDeaths}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="daily">
+			<table class="table">
+                <tr>
+                    <th>Daily Cases</th>
+                    <td th:text="${turkeyDailyCases}"></td>
+                </tr>
+                <tr>
+                    <th>Daily Recoveries</th>
+                    <td th:text="${turkeyDailyRecoveries}"></td>
+                </tr>
+                <tr>
+                    <th>Daily Deaths</th>
+                    <td th:text="${turkeyDailyDeaths}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+    <table class="table">
+        <tr class="abc">
+            <th class="stateAll" style="font-size:20px">State</th>
+            <th class="countryAll" style="font-size:20px">Country</th>
+            <th class="reportedAll" style="font-size:20px">Total Cases</th>
+            <th class="dailyAll" style="font-size:20px">Total Deaths</th>
+            <th class="dailyAll" style="font-size:20px">Daily Cases</th>
+            <th class="dailyAll" style="font-size:20px">Daily Deaths</th>
+
+        </tr>
+        <tr th:each="locationStat : ${countryStats}">
+            <td class="stateAll" th:text="${locationStat.State}"></td>
+            <td class="countryAll" th:text="${locationStat.country}"></td>
+            <td class="reportedAll" th:text="${locationStat.latestTotalCases}">0</td>
+            <td class="reportedAll" th:text="${locationStat.latestTotalDeaths}">0</td>
+            <td class="dailyAll" th:text="${locationStat.diffFromPrevDayCases}">0</td>
+            <td class="dailyAll" th:text="${locationStat.diffFromPrevDayDeaths}">0</td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>
