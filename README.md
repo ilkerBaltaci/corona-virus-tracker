@@ -11,7 +11,9 @@ I'm a newbie to the software world so please forgive me if I'm wrong.
 
 Please give me feedback in case of any error.
 
-To run the project, download the project and run it in an IDE such as IntelliJ Idea or Eclipse.
+To run the project, download the project and run it in an IDE such as IntelliJ Idea or Eclipse. Then, open browser and address localhost:8080. You can see the website.
+
+Have a good days.
 
 <h3 align=center>Demo Website</h3>
 <img src="coronavirusTrackerApp.PNG"></img>
