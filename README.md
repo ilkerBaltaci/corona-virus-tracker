@@ -3,8 +3,6 @@ Corona virus tracker Web App with Java Spring Boot
 
 This project is a small-mid sized project implementing Java Spring Boot, Thymeleaf,HTML and CSS.
 
-Thanks to Java Brains for sharing tutorial their own <a href="https://www.youtube.com/watch?v=8hjNG9GZGnQ">youtube channel.</a> I improved this project by adding 2 more datasets and adding css codes to get better frontend.
-
 You can use this project however you want.
 
 I'm a newbie to the software world so please forgive me if I'm wrong. 
